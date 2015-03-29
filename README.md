@@ -16,5 +16,5 @@ git clone https://github.com/gditzler/ECES490-Sp2015.git
 # Links to Tutorials 
 
 * [Bash](http://nbviewer.ipython.org/github/gditzler/ECES490-Sp2015/blob/master/bash/Bash-Tutorial.ipynb)
-* [BioPython](http://nbviewer.ipython.org/github/gditzler/ECES490-Sp2015/blob/master/bash/Bash-Tutorial.ipynb)
+* [BioPython](http://nbviewer.ipython.org/github/gditzler/ECES490-Sp2015/blob/master/python/BioPython-Tutorial.ipynb)
 
