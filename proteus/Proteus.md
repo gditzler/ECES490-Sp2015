@@ -12,13 +12,8 @@ Proteus has two head nodes that you can use for compting. Think of the nodes as 
   # sshing into Intel servers 
   ssh USERNAME@proteusi01.urcf.drexel.edu
 ```
-where `USERNAME` is your username for proteus. Note that in the shell, the `$` is used to denote a variable. For example, if my username was `greg`, I could use something like: 
+where `USERNAME` is your username for proteus. 
 
-```bash 
-  USERNAME=greg
-  echo "My user name is ${USERNAME}" 
-  ssh ${USERNAME}@proteusa01.urcf.drexel.edu
-```
 
 You can setup your ssh keys and add the public key onto Proteus. To do this, you'll need to [generate an ssh key](https://help.github.com/articles/generating-ssh-keys/) if you do not already have one setup. Then add the public key to `~/.ssh/authorized_keys`.  
 
@@ -74,9 +69,9 @@ The outline for this script can be found on the [Proteus wiki](https://proteusma
   # set email address for sending job status
   #$ -M fixme@drexel.edu
   # project - basically, your research group name with "Grp" replaced by "Prj"
-  # -P fixmePrj
+  #$ -P nsftuesPrj
   # select parallel environment, and number of job slots
-  #$ -pe openmpi_ib 256
+  #$ -pe openmpi_ib 5
   # request 15 min of wall clock time "h_rt" = "hard real time" (format is HH:MM:SS, or integer seconds)
   #$ -l h_rt=00:15:00
   # a hard limit 8 GB of memory per slot - if the job grows beyond this, the job is killed
@@ -120,7 +115,7 @@ It is very likely that your projects will require that you submit your code to t
   #$ -S /bin/bash
   #$ -cwd
   #$ -M fixme@drexel.edu
-  # -P nsftuesPrj
+  #$ -P nsftuesPrj
   #$ -l h_rt=00:15:00
   #$ -l h_vmem=8G
   #$ -l mem_free=6G
