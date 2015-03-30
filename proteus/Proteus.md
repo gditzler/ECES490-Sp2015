@@ -16,9 +16,11 @@ where `USERNAME` is your username for proteus. Note that in the shell, the `$` i
 
 ```bash 
   USERNAME=greg
-  echo "My user name is $USERNAME" 
-  ssh $USERNAME@proteusa01.urcf.drexel.edu
+  echo "My user name is ${USERNAME}" 
+  ssh ${USERNAME}@proteusa01.urcf.drexel.edu
 ```
+
+You can setup your ssh keys and add the public key onto Proteus. To do this, you'll need to [generate an ssh key](https://help.github.com/articles/generating-ssh-keys/) if you do not already have one setup. Then add the public key to `~/.ssh/authorized_keys`.  
 
 # Transferring Files
 
