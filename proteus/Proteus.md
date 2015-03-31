@@ -116,9 +116,6 @@ It is very likely that your projects will require that you submit your code to t
   #$ -cwd
   #$ -M fixme@drexel.edu
   #$ -P nsftuesPrj
-  #$ -l h_rt=00:15:00
-  #$ -l h_vmem=8G
-  #$ -l mem_free=6G
   #$ -q all.q@@amdhosts 
 
   . /etc/profile.d/modules.sh
@@ -145,10 +142,7 @@ Rather write the file to scratch then move the file to your local directory afte
   #$ -S /bin/bash
   #$ -cwd
   #$ -M fixme@drexel.edu
-  # -P nsftuesPrj
-  #$ -l h_rt=00:15:00
-  #$ -l h_vmem=8G
-  #$ -l mem_free=6G
+  #$ -P nsftuesPrj
   #$ -q all.q@@amdhosts 
 
   . /etc/profile.d/modules.sh
