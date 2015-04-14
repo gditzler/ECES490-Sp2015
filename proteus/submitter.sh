@@ -16,8 +16,8 @@ module load qiime/gcc/64/1.8.0
 
 ###############################
 ## Change this path!!!!
-data_fp=/home/gcd34/ECES490-Sp2015/data/
-out_fp=/home/gcd34/ECES490-Sp2015/output/
+data_fp=
+out_fp=
 
 # 1) check out mapping file 
 validate_mapping_file.py -m ${data_fp}/Fasting_Map.txt -o ${TMP}/mapping_output/ -v
