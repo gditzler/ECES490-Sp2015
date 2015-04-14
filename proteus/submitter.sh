@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash 
 #$ -S /bin/bash
 #$ -cwd
 #$ -M gcd34@drexel.edu
-#$ -P nsftuesPrj
-#$ -q all.q@@amdhosts 
+#$ -P nsftuesPrj 
+#$ -q all.q@@intelhosts 
 
 # boiler plate stuff here! set up the environment at we need to do our
 # computation
@@ -11,13 +11,14 @@
 module load shared
 module load proteus
 module load sge/univa
+
 module load gcc/4.8.1
 module load qiime/gcc/64/1.8.0
 
 ###############################
 ## Change this path!!!!
-data_fp=
-out_fp=
+data_fp=/home/gcd34/Git/ECES490-Sp2015/data
+out_fp=/home/gcd34/Git/ECES490-Sp2015/proteus/output/
 
 # 1) check out mapping file 
 validate_mapping_file.py -m ${data_fp}/Fasting_Map.txt -o ${TMP}/mapping_output/ -v
@@ -52,16 +53,15 @@ make_bootstrapped_tree.py -m ${TMP}/wf_jack/unweighted_unifrac/upgma_cmp/master_
 
 # remember that we were writing to scratch space. we need to move the files 
 # back to our home folder. 
-cp -R ${TMP}/mapping_output/ ${out_fp}/mapping_output/
-cp -R ${TMP}/split_library_output ${out_fp}/split_library_output/
-cp -R ${TMP}/otus ${out_fp}/otus
-cp -R ${TMP}/otus/OTU_Heatmap/ ${out_fp}/otus/OTU_Heatmap/
-cp -R ${TMP}/otus/OTU_Network ${out_fp}/otus/OTU_Network
-cp -R ${TMP}/wf_taxa_summary/ ${out_fp}/wf_taxa_summary/
-cp ${TMP}/alpha_params.txt ${out_fp}/alpha_params.txt
-cp -R ${TMP}/wf_arare ${out_fp}/wf_arare
-cp -R ${TMP}/wf_bdiv_even146/ ${out_fp}/wf_bdiv_even146/
-cp -R ${TMP}/wf_jack ${out_fp}/wf_jack
-cp ${TMP}/wf_jack/unweighted_unifrac/upgma_cmp/jackknife_named_nodes.pdf ${out_fp}/wf_jack/unweighted_unifrac/upgma_cmp/jackknife_named_nodes.pdf
-
+mv ${TMP}/mapping_output/ ${out_fp}/mapping_output/
+mv ${TMP}/split_library_output ${out_fp}/split_library_output/
+mv ${TMP}/otus ${out_fp}/otus
+mv ${TMP}/otus/OTU_Heatmap/ ${out_fp}/otus/OTU_Heatmap/
+mv ${TMP}/otus/OTU_Network ${out_fp}/otus/OTU_Network
+mv ${TMP}/wf_taxa_summary/ ${out_fp}/wf_taxa_summary/
+mv ${TMP}/alpha_params.txt ${out_fp}/alpha_params.txt
+mv ${TMP}/wf_arare ${out_fp}/wf_arare
+mv ${TMP}/wf_bdiv_even146/ ${out_fp}/wf_bdiv_even146/
+mv ${TMP}/wf_jack ${out_fp}/wf_jack
+mv ${TMP}/wf_jack/unweighted_unifrac/upgma_cmp/jackknife_named_nodes.pdf ${out_fp}/wf_jack/unweighted_unifrac/upgma_cmp/jackknife_named_nodes.pdf
 
